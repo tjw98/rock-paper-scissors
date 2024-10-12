@@ -21,16 +21,19 @@ function getHumanChoice() {
 
 // Decide winner of round
 function playRound(humanChoice, computerChoice) {
+  // Win condition
   if (humanChoice === "Rock" && computerChoice === "Scissors"
     || humanChoice === "Scissors" && computerChoice === "Paper"
     || humanChoice === "Paper" && computerChoice === "Rock"
   ) {
     console.log("You win!");
+  // Lose condition
   } else if (humanChoice === "Rock" && computerChoice === "Paper"
     || humanChoice === "Scissors" && computerChoice === "Rock"
     || humanChoice === "Paper" && computerChoice === "Scissors"
   ) {
     console.log("You lose.");
+  // Tie condition
   } else {
     console.log("It's a tie.");
   }
