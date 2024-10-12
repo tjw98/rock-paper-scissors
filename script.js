@@ -19,17 +19,18 @@ function getHumanChoice() {
   return formChoice;
 }
 
+// Decide winner of round
 function playRound(humanChoice, computerChoice) {
   if (humanChoice === "Rock" && computerChoice === "Scissors"
     || humanChoice === "Scissors" && computerChoice === "Paper"
     || humanChoice === "Paper" && computerChoice === "Rock"
   ) {
-    console.log("You lose.");
+    console.log("You win!");
   } else if (humanChoice === "Rock" && computerChoice === "Paper"
     || humanChoice === "Scissors" && computerChoice === "Rock"
     || humanChoice === "Paper" && computerChoice === "Scissors"
   ) {
-    console.log("You win!");
+    console.log("You lose.");
   } else {
     console.log("It's a tie.");
   }
