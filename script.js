@@ -16,6 +16,11 @@ function getHumanChoice() {
   return prompt("Choice: ").toLowerCase();
 }
 
+
+// Initialise score variables
+let computerScore = 0;
+let humanScore = 0;
+
 // Assign computers choice 
 let computerChoice = getComputerChoice();
 let humanChoice = getHumanChoice();
