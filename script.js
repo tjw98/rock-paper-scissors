@@ -16,7 +16,15 @@ function getComputerChoice() {
 function getHumanChoice() {
   let choice = prompt("Choice: ").toLowerCase()
   let formChoice = choice[0].toUpperCase() + choice.slice(1);
-  return formChoice;
+
+  if (formChoice === "Rock" 
+    || formChoice === "Paper" 
+    || formChoice === "Scissors") {
+      return formChoice;
+    } else {
+      console.log("Please enter either Rock, Paper, or Scissors");
+      return getHumanChoice();
+    }
 }
 
 // Decide winner of round
