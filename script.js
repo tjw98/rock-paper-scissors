@@ -48,3 +48,10 @@ let computerChoice = getComputerChoice();
 
 // Assign humans choice
 let humanChoice = getHumanChoice();
+
+// Print human and computer choices to console
+console.log(humanChoice);
+console.log(computerChoice);
+
+// Play round of game
+playRound(humanChoice, computerChoice);
