@@ -19,6 +19,21 @@ function getHumanChoice() {
   return formChoice;
 }
 
+function playRound(humanChoice, computerChoice) {
+  if (humanChoice === "Rock" && computerChoice === "Scissors"
+    || humanChoice === "Scissors" && computerChoice === "Paper"
+    || humanChoice === "Paper" && computerChoice === "Rock"
+  ) {
+    console.log("You lose.");
+  } else if (humanChoice === "Rock" && computerChoice === "Paper"
+    || humanChoice === "Scissors" && computerChoice === "Rock"
+    || humanChoice === "Paper" && computerChoice === "Scissors"
+  ) {
+    console.log("You win!");
+  } else {
+    console.log("It's a tie.");
+  }
+}
 
 // Initialise score variables
 let computerScore = 0;
