@@ -12,8 +12,11 @@ function getComputerChoice() {
   }
 }
 
+// Return human choice based on prompt
 function getHumanChoice() {
-  return prompt("Choice: ").toLowerCase();
+  let choice = prompt("Choice: ").toLowerCase()
+  let formChoice = choice[0].toUpperCase() + choice.slice(1);
+  return formChoice;
 }
 
 
