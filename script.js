@@ -26,4 +26,6 @@ let humanScore = 0;
 
 // Assign computers choice 
 let computerChoice = getComputerChoice();
+
+// Assign humans choice
 let humanChoice = getHumanChoice();
