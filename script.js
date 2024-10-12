@@ -12,5 +12,10 @@ function getComputerChoice() {
   }
 }
 
+function getHumanChoice() {
+  return prompt("Choice: ").toLowerCase();
+}
+
 // Assign computers choice 
 let computerChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
