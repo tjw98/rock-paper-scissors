@@ -44,6 +44,7 @@ let computerScore = 0;
 let humanScore = 0;
 let roundNum = 1;
 
+//Initialse game elements
 const gameContainer = document.querySelector(".game-container");
 const buttonContainer = document.querySelector(".button-container");
 const scoreBoard = document.querySelector(".scoreboard");
