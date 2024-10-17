@@ -12,24 +12,8 @@ function getComputerChoice() {
   }
 }
 
-// Return human choice based on prompt
-function getHumanChoice() {
-  let choice = prompt("Choice: ").toLowerCase()
-  let formChoice = choice[0].toUpperCase() + choice.slice(1);
-
-  if (formChoice === "Rock" 
-    || formChoice === "Paper" 
-    || formChoice === "Scissors") {
-      return formChoice;
-    } else {
-      console.log("Please enter either Rock, Paper, or Scissors");
-      return getHumanChoice();
-    }
-}
-
 // Decide winner of round
-function playRound(humanChoice, computerChoice, roundNumber) {
-  console.log(`Round ${roundNumber}:`);
+function playRound(humanChoice, computerChoice) {
   // Win condition
   if (humanChoice === "Rock" && computerChoice === "Scissors"
     || humanChoice === "Scissors" && computerChoice === "Paper"
@@ -50,24 +34,28 @@ function playRound(humanChoice, computerChoice, roundNumber) {
   }
 }
 
-function playGame() {
-  for(let i = 0; i < 5; i++){
-    playRound(getHumanChoice(), getComputerChoice(), roundNumber);
-    roundNumber += 1;
-  }
-
-  if (humanScore > computerScore) {
-    console.log(`You win the game ${humanScore} to ${computerScore}`);
-  } else if (computerScore > humanScore) {
-    console.log(`You lose the game ${humanScore} to ${computerScore}`);
-  } else {
-    console.log("The game is a tie, what are the odds.");
-  }
-}
-
 // Initialise score variables
 let computerScore = 0;
 let humanScore = 0;
-let roundNumber = 1;
 
-playGame();
+// Create game container
+const gameContainer = document.createElement("div");
+document.body.appendChild(gameContainer);
+
+// Create rps buttons
+const rockBtn = document.createElement("button");
+rockBtn.textContent = "Rock";
+gameContainer.appendChild(rockBtn);
+
+const paperBtn = document.createElement("button");
+paperBtn.textContent = "Paper";
+gameContainer.appendChild(paperBtn);
+
+const scissorsBtn = document.createElement("button");
+scissorsBtn.textContent = "Scissors";
+gameContainer.appendChild(scissorsBtn);
+
+// Add click event listeners and play game on click
+rockBtn.addEventListener("click", () => playRound("Rock", getComputerChoice()));
+paperBtn.addEventListener("click", () => playRound("Paper", getComputerChoice()));
+scissorsBtn.addEventListener("click", () => playRound("Scissors", getComputerChoice()));
