@@ -16,6 +16,22 @@ function updateScoreBoard() {
   scoreBoard.textContent = `Round: ${roundNum} Player Score: ${humanScore} Computer Score: ${computerScore}`;
 }
 
+function checkGameWon() {
+  if (humanScore === 5) {
+    gameResults.textContent = "Congrats! You win :)";
+    gameResults.style.fontSize = "80px";
+    buttonContainer.removeChild(rockBtn);
+    buttonContainer.removeChild(paperBtn);
+    buttonContainer.removeChild(scissorsBtn);
+  } else if (computerScore === 5) {
+    gameResults.textContent = "Oh no! You lose :(";
+    gameResults.style.fontSize = "80px";
+    buttonContainer.removeChild(rockBtn);
+    buttonContainer.removeChild(paperBtn);
+    buttonContainer.removeChild(scissorsBtn);
+  }
+}
+
 // Decide winner of round
 function playRound(humanChoice, computerChoice) {
   roundNum += 1;
@@ -37,6 +53,7 @@ function playRound(humanChoice, computerChoice) {
   } else {
     gameResults.textContent = "It's a tie.";
   }
+  checkGameWon();
 }
 
 // Initialise score variables
