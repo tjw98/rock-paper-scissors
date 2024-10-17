@@ -82,4 +82,4 @@ scissorsBtn.addEventListener(
   "click", () => {
     playRound("Scissors", getComputerChoice());
     updateScoreBoard();
-  });  ``
+  });
